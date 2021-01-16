@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HK_Road_Sign_Detection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Wb-fG-2cM">
+                                <rect key="frame" x="0.0" y="687" width="414" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="VVU-o6-SeU"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="qJq-7t-2lr">
+                                        <connections>
+                                            <action selector="takePicture:" destination="BYZ-38-t0r" id="63O-Xg-Vol"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2YI-mo-aDq"/>
+                                </items>
+                            </toolbar>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqf-9X-KGs">
+                                <rect key="frame" x="50" y="473.00000000000006" width="314" height="204.66666666666669"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="n4B-Tx-JUz">
+                                    <rect key="frame" x="0.0" y="0.0" width="314" height="204.66666666666669"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xei-6D-jnb">
+                                            <rect key="frame" x="20" y="20" width="274" height="164.66666666666666"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                            <state key="normal" title="Add a photo.">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="takePicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vjf-Mf-nUN"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xei-6D-jnb" secondAttribute="trailing" constant="20" id="N1y-rV-Apk"/>
+                                        <constraint firstAttribute="bottom" secondItem="xei-6D-jnb" secondAttribute="bottom" constant="20" id="Plk-oh-CLL"/>
+                                        <constraint firstItem="xei-6D-jnb" firstAttribute="top" secondItem="n4B-Tx-JUz" secondAttribute="top" constant="20" id="QTD-33-0il"/>
+                                        <constraint firstItem="xei-6D-jnb" firstAttribute="leading" secondItem="n4B-Tx-JUz" secondAttribute="leading" constant="20" id="b27-Y9-qQn"/>
+                                        <constraint firstItem="xei-6D-jnb" firstAttribute="leading" secondItem="n4B-Tx-JUz" secondAttribute="leading" constant="20" id="if9-xl-Ehl"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jqf-9X-KGs" secondAttribute="height" multiplier="23:15" id="EOP-Z5-JgR"/>
+                                    <constraint firstAttribute="width" secondItem="jqf-9X-KGs" secondAttribute="height" multiplier="23:5" id="fXw-Ss-225"/>
+                                </constraints>
+                                <blurEffect style="extraLight"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EOP-Z5-JgR"/>
+                                        <exclude reference="fXw-Ss-225"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="EOP-Z5-JgR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="fXw-Ss-225"/>
+                                    </mask>
+                                </variation>
+                            </visualEffectView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="HYF-Yl-4hA">
+                                <rect key="frame" x="129.66666666666666" y="630" width="154.99999999999997" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HK Road Sign Detection" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Av-vp-cGF">
+                                        <rect key="frame" x="0.0" y="0.0" width="155" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered By JChowCH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOo-K5-ajB">
+                                        <rect key="frame" x="24" y="21" width="107" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="SNt-mS-xkm"/>
+                                    <constraint firstAttribute="width" constant="155" id="h6G-wv-rs7"/>
+                                </constraints>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R43-L3-QpY">
+                                <rect key="frame" x="104" y="164" width="206" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="R43-L3-QpY" secondAttribute="height" multiplier="374:313" id="8VH-2o-Tu5"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7Wb-fG-2cM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5yV-PX-xWA"/>
+                            <constraint firstItem="jqf-9X-KGs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="7ZK-Lo-rZa"/>
+                            <constraint firstAttribute="trailing" secondItem="R43-L3-QpY" secondAttribute="trailing" constant="20" id="EBE-OO-foI"/>
+                            <constraint firstItem="R43-L3-QpY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Hhf-QX-ufV"/>
+                            <constraint firstItem="jqf-9X-KGs" firstAttribute="top" secondItem="R43-L3-QpY" secondAttribute="bottom" constant="80" id="ICh-GQ-Y6K"/>
+                            <constraint firstAttribute="bottom" secondItem="7Wb-fG-2cM" secondAttribute="bottom" id="W5b-uI-SJI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jqf-9X-KGs" secondAttribute="trailing" constant="50" id="WEb-Kl-LWX"/>
+                            <constraint firstItem="HYF-Yl-4hA" firstAttribute="centerX" secondItem="7Wb-fG-2cM" secondAttribute="centerX" id="aML-ku-14W"/>
+                            <constraint firstItem="R43-L3-QpY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="cgN-xK-bRY"/>
+                            <constraint firstItem="7Wb-fG-2cM" firstAttribute="top" secondItem="HYF-Yl-4hA" secondAttribute="bottom" constant="24" id="lim-Np-SWn"/>
+                            <constraint firstItem="7Wb-fG-2cM" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="p2O-oP-2WV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="R43-L3-QpY" id="mWd-Ny-ylb"/>
+                        <outlet property="result" destination="xei-6D-jnb" id="aT8-Lz-wcZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="136.95652173913044"/>
+        </scene>
+    </scenes>
+</document>
